@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketo — Marketplace</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="8" fill="#6366f1"/>
+          <path d="M7 20L14 8L21 20H7Z" fill="white" opacity="0.9"/>
+          <circle cx="14" cy="14" r="3" fill="white"/>
+        </svg>
+        <span>Marketo</span>
+      </a>
+
+      <div class="search-bar">
+        <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Buscar productos..." />
+      </div>
+
+      <nav class="nav">
+        <a href="#" class="nav__link">Inicio</a>
+        <a href="#categories" class="nav__link">Categorías</a>
+        <a href="#products" class="nav__link">Productos</a>
+        <button class="btn-icon" id="cartBtn" title="Carrito">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+        <button class="btn-primary" id="loginBtn">Entrar</button>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="search-bar search-bar--mobile">
+        <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" placeholder="Buscar productos..." />
+      </div>
+      <a href="#">Inicio</a>
+      <a href="#categories">Categorías</a>
+      <a href="#products">Productos</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="hero__tag">Nuevo · Temporada 2026</span>
+        <h1 class="hero__title">Descubre los mejores productos al mejor precio</h1>
+        <p class="hero__sub">Miles de vendedores verificados. Envío rápido. Devolución garantizada.</p>
+        <div class="hero__actions">
+          <a href="#products" class="btn-primary btn-lg">Ver productos</a>
+          <a href="#" class="btn-ghost btn-lg">Vender aquí</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__card hero__card--1">
+          <div class="hero__card-img" style="background:#e0e7ff">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          </div>
+          <p>MacBook Pro</p>
+          <strong>$1,299</strong>
+        </div>
+        <div class="hero__card hero__card--2">
+          <div class="hero__card-img" style="background:#fce7f3">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          <p>AirPods Pro</p>
+          <strong>$249</strong>
+        </div>
+        <div class="hero__card hero__card--3">
+          <div class="hero__card-img" style="background:#dcfce7">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <p>Smart Watch</p>
+          <strong>$399</strong>
+        </div>
+      </div>
+    </div>
+    <div class="hero__stats">
+      <div class="container hero__stats-inner">
+        <div class="stat"><strong>50K+</strong><span>Productos</span></div>
+        <div class="stat"><strong>12K+</strong><span>Vendedores</span></div>
+        <div class="stat"><strong>200K+</strong><span>Compradores</span></div>
+        <div class="stat"><strong>4.8★</strong><span>Valoración</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="container">
+      <h2 class="section__title">Categorías</h2>
+      <div class="category-grid">
+        <button class="category-chip active" data-category="all">Todos</button>
+        <button class="category-chip" data-category="electronica">Electrónica</button>
+        <button class="category-chip" data-category="moda">Moda</button>
+        <button class="category-chip" data-category="hogar">Hogar</button>
+        <button class="category-chip" data-category="deportes">Deportes</button>
+        <button class="category-chip" data-category="libros">Libros</button>
+        <button class="category-chip" data-category="juguetes">Juguetes</button>
+        <button class="category-chip" data-category="belleza">Belleza</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SORT / FILTER BAR -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="products-header">
+        <h2 class="section__title">Productos</h2>
+        <div class="products-controls">
+          <select id="sortSelect" class="select">
+            <option value="default">Ordenar por</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+            <option value="rating">Mejor valorados</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- PRODUCT GRID -->
+      <div class="product-grid" id="productGrid">
+        <!-- Injected by JS -->
+      </div>
+
+      <div class="no-results hidden" id="noResults">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <p>No se encontraron productos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER CTA -->
+  <section class="cta-banner">
+    <div class="container cta-banner__inner">
+      <div>
+        <h2>¿Tienes algo para vender?</h2>
+        <p>Únete a miles de vendedores y llega a millones de compradores.</p>
+      </div>
+      <a href="#" class="btn-primary btn-lg">Empieza a vender</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#6366f1"/><path d="M7 20L14 8L21 20H7Z" fill="white" opacity="0.9"/><circle cx="14" cy="14" r="3" fill="white"/></svg>
+          <span>Marketo</span>
+        </a>
+        <p>El marketplace donde todo el mundo compra y vende.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Empresa</h4>
+        <a href="#">Sobre nosotros</a>
+        <a href="#">Blog</a>
+        <a href="#">Empleo</a>
+        <a href="#">Prensa</a>
+      </div>
+      <div class="footer__links">
+        <h4>Soporte</h4>
+        <a href="#">Centro de ayuda</a>
+        <a href="#">Devoluciones</a>
+        <a href="#">Estado del pedido</a>
+        <a href="#">Contacto</a>
+      </div>
+      <div class="footer__links">
+        <h4>Legal</h4>
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Marketo. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__header">
+      <h3>Tu carrito</h3>
+      <button class="btn-icon" id="closeCart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer__body" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <p>Tu carrito está vacío</p>
+      </div>
+    </div>
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn-primary btn-full">Ir al pago</button>
+    </div>
+  </aside>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
