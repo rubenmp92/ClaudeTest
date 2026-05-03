@@ -195,7 +195,6 @@ function renderCart() {
   if (state.cart.length === 0) {
     emptyEl.style.display = 'flex';
     footerEl.style.display = 'none';
-    // remove all cart items except empty placeholder
     Array.from(itemsEl.querySelectorAll('.cart-item')).forEach(el => el.remove());
     return;
   }
@@ -273,7 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProducts();
   renderCart();
 
-  // Category chips
   document.querySelectorAll('.category-chip').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.category-chip').forEach(b => b.classList.remove('active'));
@@ -283,19 +281,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Search
   document.getElementById('searchInput').addEventListener('input', e => {
     state.searchQuery = e.target.value;
     renderProducts();
   });
 
-  // Sort
   document.getElementById('sortSelect').addEventListener('change', e => {
     state.sortMode = e.target.value;
     renderProducts();
   });
 
-  // Product grid interactions (delegated)
   document.getElementById('productGrid').addEventListener('click', e => {
     const addBtn = e.target.closest('[data-add]');
     if (addBtn) { addToCart(Number(addBtn.dataset.add)); return; }
@@ -308,12 +303,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Cart open/close
   document.getElementById('cartBtn').addEventListener('click', openCart);
   document.getElementById('closeCart').addEventListener('click', closeCart);
   document.getElementById('cartOverlay').addEventListener('click', closeCart);
 
-  // Cart item interactions (delegated)
   document.getElementById('cartItems').addEventListener('click', e => {
     const dec = e.target.closest('[data-qty-dec]');
     if (dec) { changeQty(Number(dec.dataset.qtyDec), -1); return; }
@@ -323,12 +316,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (rem) { removeFromCart(Number(rem.dataset.remove)); }
   });
 
-  // Mobile menu
   document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('open');
   });
 
-  // Login button (demo)
   document.getElementById('loginBtn').addEventListener('click', () => {
     showToast('Función de inicio de sesión próximamente');
   });
